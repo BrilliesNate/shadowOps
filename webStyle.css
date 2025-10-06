@@ -466,8 +466,24 @@ body {
 }
 
 .badge-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge-icon svg {
+    width: 45px;
+    height: 45px;
+    stroke: url(#iconGradient);
+    stroke-width: 2;
+    transition: transform 0.3s;
+}
+
+.trust-badge:hover .badge-icon svg {
+    transform: scale(1.1);
 }
 
 .badge-text {
@@ -652,8 +668,38 @@ body {
 }
 
 .tech-icon {
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tech-feature:hover .tech-icon::before {
+    opacity: 1;
+}
+
+.tech-icon svg {
+    width: 40px;
+    height: 40px;
+    stroke: white;
+    position: relative;
+    z-index: 1;
 }
 
 .tech-feature h3 {
@@ -820,8 +866,39 @@ body {
 }
 
 .visual-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    border-radius: 50%;
+    position: relative;
+}
+
+.visual-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.visual-card:hover .visual-icon::after {
+    opacity: 1;
+}
+
+.visual-icon svg {
+    width: 45px;
+    height: 45px;
+    stroke: white;
+    fill: none;
+    position: relative;
+    z-index: 1;
 }
 
 .visual-card h3 {
@@ -917,15 +994,38 @@ body {
 }
 
 .method-icon {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    border-radius: 10px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.method-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.contact-method:hover .method-icon::after {
+    opacity: 1;
+}
+
+.method-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: white;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-method h4 {
