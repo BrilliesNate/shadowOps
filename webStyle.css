@@ -212,6 +212,7 @@ body {
     position: relative;
     overflow: hidden;
     padding-top: 100px;
+    padding-bottom: 4rem;
 }
 
 .hero-bg {
@@ -674,32 +675,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
-}
-
-.tech-icon::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1));
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.tech-feature:hover .tech-icon::before {
-    opacity: 1;
 }
 
 .tech-icon svg {
-    width: 40px;
-    height: 40px;
-    stroke: white;
-    position: relative;
-    z-index: 1;
+    width: 60px;
+    height: 60px;
+    stroke: url(#iconGradient);
+    stroke-width: 2;
+    transition: all 0.3s;
+}
+
+.tech-feature:hover .tech-icon svg {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 15px var(--glow));
 }
 
 .tech-feature h3 {
@@ -872,33 +860,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-    border-radius: 50%;
-    position: relative;
-}
-
-.visual-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2));
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.visual-card:hover .visual-icon::after {
-    opacity: 1;
 }
 
 .visual-icon svg {
-    width: 45px;
-    height: 45px;
-    stroke: white;
-    fill: none;
-    position: relative;
-    z-index: 1;
+    width: 60px;
+    height: 60px;
+    stroke: url(#iconGradient);
+    stroke-width: 2;
+    transition: all 0.3s;
+}
+
+.visual-card:hover .visual-icon svg {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px var(--glow));
 }
 
 .visual-card h3 {
@@ -996,36 +970,23 @@ body {
 .method-icon {
     width: 55px;
     height: 55px;
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-dark));
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.method-icon::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.2));
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.contact-method:hover .method-icon::after {
-    opacity: 1;
 }
 
 .method-icon svg {
-    width: 28px;
-    height: 28px;
-    stroke: white;
-    position: relative;
-    z-index: 1;
+    width: 40px;
+    height: 40px;
+    stroke: url(#iconGradient);
+    stroke-width: 2;
+    transition: all 0.3s;
+}
+
+.contact-method:hover .method-icon svg {
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 10px var(--glow));
 }
 
 .contact-method h4 {
@@ -1289,6 +1250,11 @@ body {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 1024px) {
+    .hero {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+    }
+
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
@@ -1350,6 +1316,11 @@ body {
         display: none;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 8rem 0 4rem;
+    }
+
     .title-main {
         font-size: 3rem;
     }
@@ -1380,10 +1351,23 @@ body {
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+        background: rgba(20, 20, 20, 0.8);
+        border-radius: 15px;
+        border: 1px solid var(--border);
     }
 
     .stat-number {
         font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .trust-badges {
@@ -1447,6 +1431,10 @@ body {
         height: 40px;
     }
 
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+
     .title-main {
         font-size: 2rem;
     }
@@ -1460,12 +1448,24 @@ body {
         font-size: 1.2rem;
     }
 
+    .hero-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+        padding: 1.5rem 0.5rem;
+    }
+
     .stat-number {
         font-size: 2rem;
     }
 
     .stat-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .trust-badges {

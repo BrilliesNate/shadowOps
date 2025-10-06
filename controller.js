@@ -245,13 +245,15 @@ function initParallax() {
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         
-        // Hero parallax
-        const hero = document.querySelector('.hero');
-        if (hero && scrolled < window.innerHeight) {
-            const heroContent = document.querySelector('.hero-content');
-            if (heroContent) {
-                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                heroContent.style.opacity = 1 - (scrolled / 600);
+        // Hero parallax - only apply on larger screens
+        if (window.innerWidth > 1024) {
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / 600);
+                }
             }
         }
     });
