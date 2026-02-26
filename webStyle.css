@@ -41,13 +41,13 @@ body {
 
 /* ===== EMERGENCY BAR ===== */
 .emergency-bar {
-    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+    background: linear-gradient(90deg, #0f2d6b, #1a4db5);
     padding: 0.8rem 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10000;
-    box-shadow: 0 2px 20px rgba(107, 123, 90, 0.3);
+    box-shadow: 0 2px 20px rgba(26, 77, 181, 0.3);
 }
 
 .emergency-bar .container {
@@ -77,18 +77,18 @@ body {
 
 /* ===== NAVIGATION ===== */
 .navbar {
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(15, 35, 90, 0.95);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 45px;
     width: 100%;
     z-index: 9999;
     transition: all 0.3s ease;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(26, 77, 181, 0.4);
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(10, 25, 70, 0.98);
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -1294,7 +1294,7 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(10, 10, 10, 0.98);
+        background: rgba(10, 25, 70, 0.98);
         backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 2rem;
