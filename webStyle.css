@@ -220,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
+    padding-top: 160px;
     padding-bottom: 4rem;
 }
 
@@ -1266,7 +1266,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 1024px) {
     .hero {
         min-height: auto;
-        padding: 8rem 0 4rem;
+        padding: 10rem 0 4rem;
     }
 
     .hero-stats {
