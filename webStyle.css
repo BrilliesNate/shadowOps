@@ -8,19 +8,19 @@
 }
 
 :root {
-    --primary: #6B7B5A;
-    --primary-dark: #4A5842;
-    --primary-light: #8B9A7A;
-    --accent: #9FAF8F;
-    --bg-dark: #0a0a0a;
-    --bg-darker: #050505;
-    --bg-card: #141414;
-    --bg-card-hover: #1a1a1a;
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0b0;
-    --text-muted: #707070;
-    --border: #252525;
-    --glow: rgba(107, 123, 90, 0.4);
+    --primary: #7a8f67;
+    --primary-dark: #556348;
+    --primary-light: #9aaa87;
+    --accent: #aab898;
+    --bg-dark: #141c0e;
+    --bg-darker: #0e1509;
+    --bg-card: #1a2412;
+    --bg-card-hover: #20291a;
+    --text-primary: #ede8d5;
+    --text-secondary: #a8a890;
+    --text-muted: #6e6e58;
+    --border: #2e3e22;
+    --glow: rgba(122, 143, 103, 0.45);
 }
 
 html {
@@ -33,6 +33,32 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* ===== CAMO TEXTURE LAYER ===== */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background-color: #141c0e;
+    background-image:
+        radial-gradient(ellipse 22vw 14vh at  6% 12%, #0a1206 0%, transparent 70%),
+        radial-gradient(ellipse 32vw 10vh at 28%  5%, #0d1509 0%, transparent 65%),
+        radial-gradient(ellipse 16vw 22vh at 50% 20%, #0a1206 0%, transparent 68%),
+        radial-gradient(ellipse 28vw 12vh at 74% 10%, #182210 0%, transparent 65%),
+        radial-gradient(ellipse 14vw 20vh at 92% 25%, #0d1509 0%, transparent 60%),
+        radial-gradient(ellipse 20vw 18vh at  3% 48%, #1c2a12 0%, transparent 70%),
+        radial-gradient(ellipse 36vw 12vh at 34% 58%, #0a1206 0%, transparent 65%),
+        radial-gradient(ellipse 18vw 26vh at 62% 48%, #182210 0%, transparent 68%),
+        radial-gradient(ellipse 26vw 14vh at 85% 55%, #0d1509 0%, transparent 65%),
+        radial-gradient(ellipse 16vw 18vh at 14% 80%, #0a1206 0%, transparent 68%),
+        radial-gradient(ellipse 28vw 16vh at 44% 85%, #1c2a12 0%, transparent 65%),
+        radial-gradient(ellipse 20vw 14vh at 72% 80%, #0d1509 0%, transparent 68%),
+        radial-gradient(ellipse 14vw 22vh at 97% 75%, #182210 0%, transparent 62%),
+        radial-gradient(ellipse 12vw 10vh at 20% 35%, #253618 0%, transparent 60%),
+        radial-gradient(ellipse 10vw 14vh at 58% 70%, #253618 0%, transparent 58%),
+        radial-gradient(ellipse  8vw 12vh at 80% 38%, #253618 0%, transparent 55%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -86,7 +112,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== NAVIGATION ===== */
 .navbar {
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(14, 21, 9, 0.97);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 45px;
@@ -97,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar.scrolled {
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(14, 21, 9, 0.99);
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -230,10 +256,13 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(107, 123, 90, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(107, 123, 90, 0.1) 0%, transparent 50%),
-        linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    background:
+        radial-gradient(ellipse 60% 40% at 15% 30%, rgba(10, 18, 6, 0.9) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 55% at 80% 20%, rgba(13, 21, 9, 0.85) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 35% at 50% 70%, rgba(24, 34, 16, 0.8) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 50% at 90% 75%, rgba(10, 18, 6, 0.85) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 30% at 25% 80%, rgba(37, 54, 24, 0.6) 0%, transparent 60%),
+        linear-gradient(160deg, #0a1206 0%, #141c0e 40%, #0e1509 70%, #131b0d 100%);
     z-index: 0;
 }
 
@@ -242,9 +271,9 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: 
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(107, 123, 90, 0.03) 2px, rgba(107, 123, 90, 0.03) 4px);
-    animation: scanlines 8s linear infinite;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(122, 143, 103, 0.015) 3px, rgba(122, 143, 103, 0.015) 4px);
+    animation: scanlines 10s linear infinite;
 }
 
 @keyframes scanlines {
@@ -1316,7 +1345,7 @@ h1, h2, h3, h4, h5, h6 {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(10, 10, 10, 0.98);
+        background: rgba(14, 21, 9, 0.99);
         backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 2rem;
