@@ -1309,10 +1309,6 @@ h1, h2, h3, h4, h5, h6 {
         top: 75px;
     }
 
-    .hero {
-        padding-top: 10rem;
-    }
-
     .hamburger {
         display: flex;
     }
@@ -1346,7 +1342,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .hero {
         min-height: auto;
-        padding: 8rem 0 4rem;
+        padding: 11rem 0 4rem;
     }
 
     .title-main {
