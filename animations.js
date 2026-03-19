@@ -61,7 +61,7 @@ document.querySelectorAll('[data-target]').forEach(el => {
         const padY = fs * 0.10;
         const lsStr = `${(fs * 0.06).toFixed(1)}px`;
 
-        ctx.font = `900 ${fs}px 'TT Hoves', sans-serif`;
+        ctx.font = `900 ${fs}px 'Barlow', sans-serif`;
         try { ctx.letterSpacing = lsStr; } catch(e) {}
 
         const tw = ctx.measureText('SHADOW OPS').width;
@@ -86,7 +86,7 @@ document.querySelectorAll('[data-target]').forEach(el => {
 
         // 2. Crop everything to text shape — areas outside letters become transparent
         ctx.globalCompositeOperation = 'destination-in';
-        ctx.font = `900 ${fs}px 'TT Hoves', sans-serif`;
+        ctx.font = `900 ${fs}px 'Barlow', sans-serif`;
         try { ctx.letterSpacing = `${(fs * 0.06).toFixed(1)}px`; } catch(e) {}
         ctx.textAlign    = 'center';
         ctx.textBaseline = 'middle';
@@ -100,7 +100,15 @@ document.querySelectorAll('[data-target]').forEach(el => {
         setupCanvas();
         window.addEventListener('resize', () => { setupCanvas(); }, { passive: true });
         video.play().catch(() => {});
-        function loop() { draw(); requestAnimationFrame(loop); }
+        let lastVideoTime = -1;
+        function loop() {
+            // Only redraw when the video has a new frame (video is 24fps, rAF is 60fps)
+            if (video.currentTime !== lastVideoTime) {
+                lastVideoTime = video.currentTime;
+                draw();
+            }
+            requestAnimationFrame(loop);
+        }
         if (video.readyState >= 2) { requestAnimationFrame(loop); }
         else { video.addEventListener('canplay', () => requestAnimationFrame(loop), { once: true }); }
     });

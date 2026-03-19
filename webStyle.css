@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/tt-hoves');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 /* ============================================================
    DESIGN TOKENS
@@ -52,7 +52,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    TYPOGRAPHY
 ============================================================ */
 h1,h2,h3,h4 {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.1;
@@ -95,7 +95,7 @@ h1,h2,h3,h4 {
     color: var(--white);
     border: 2px solid var(--green);
     border-radius: var(--r);
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -120,7 +120,7 @@ h1,h2,h3,h4 {
     color: var(--white);
     border: 2px solid rgba(255,255,255,0.22);
     border-radius: var(--r);
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -221,7 +221,7 @@ h1,h2,h3,h4 {
 }
 .em-divider { color: rgba(74,103,65,0.5); font-size: 0.8rem; }
 .em-number {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.9rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -279,7 +279,7 @@ h1,h2,h3,h4 {
     background: var(--green);
     color: var(--white);
     border-radius: var(--r);
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -384,7 +384,7 @@ h1,h2,h3,h4 {
     height: auto;
 }
 .hero-h2 {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(1.5rem, 4vw, 3.8rem);
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -428,7 +428,7 @@ h1,h2,h3,h4 {
 .hero-num { text-align: center; }
 .hnum {
     display: block;
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 900;
     color: var(--white);
@@ -538,7 +538,7 @@ h1,h2,h3,h4 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(7rem, 22vw, 22rem);
     font-weight: 900;
     color: rgba(255,255,255,0.02);
@@ -626,7 +626,7 @@ h1,h2,h3,h4 {
     font-weight: 700;
     letter-spacing: 0.18em;
     color: var(--muted);
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 .svc-body h3 {
     font-size: 1rem;
@@ -699,7 +699,7 @@ h1,h2,h3,h4 {
     background: rgba(74,103,65,0.07);
 }
 .stat-val {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: clamp(2.5rem, 5vw, 3.8rem);
     font-weight: 900;
     color: var(--white);
@@ -756,7 +756,7 @@ h1,h2,h3,h4 {
 }
 .about-badge-num {
     display: block;
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 2.4rem;
     font-weight: 900;
     color: var(--white);
@@ -893,7 +893,7 @@ h1,h2,h3,h4 {
     background: rgba(255,255,255,0.04);
     border: 1px solid var(--border);
     border-radius: 50px;
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.16em;
@@ -1046,7 +1046,7 @@ textarea { resize: vertical; min-height: 130px; }
 }
 .footer-logo { height: 58px; margin-bottom: 1rem; }
 .footer-tagline {
-    font-family: 'TT Hoves', sans-serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.26em;
