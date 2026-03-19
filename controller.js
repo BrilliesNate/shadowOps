@@ -39,6 +39,7 @@ function initLoader() {
 
     // Track buffering progress on the larger video
     if (bgVideo) {
+        bgVideo.play().catch(() => {});
         bgVideo.addEventListener('canplay', () => { bgDone = true; check(); }, { once: true });
         bgVideo.addEventListener('progress', () => {
             if (!bgDone && bgVideo.buffered.length) {

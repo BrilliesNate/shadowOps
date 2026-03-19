@@ -100,11 +100,9 @@ document.querySelectorAll('[data-target]').forEach(el => {
         setupCanvas();
         window.addEventListener('resize', () => { setupCanvas(); }, { passive: true });
         video.play().catch(() => {});
-        function startLoop() {
-            setInterval(draw, 33); // ~30fps, works even in background tabs
-        }
-        if (video.readyState >= 2) { startLoop(); }
-        else { video.addEventListener('canplay', startLoop, { once: true }); }
+        function loop() { draw(); requestAnimationFrame(loop); }
+        if (video.readyState >= 2) { requestAnimationFrame(loop); }
+        else { video.addEventListener('canplay', () => requestAnimationFrame(loop), { once: true }); }
     });
 })();
 
