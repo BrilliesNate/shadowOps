@@ -1,3 +1,5 @@
 .claude/
 assets/*_orig.mp4
+assets/*_720p.mp4
+assets/*_16mb.mp4
 node_modules/

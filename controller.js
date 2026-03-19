@@ -17,11 +17,19 @@ function initLoader() {
     const label  = document.getElementById('loaderLabel');
     if (!loader) return;
 
-    const bgVideo   = document.querySelector('.hero-img');
-    const textVideo = document.getElementById('titleVideo');
+    const bgVideo = document.querySelector('.hero-img');
 
-    let bgDone = false, textDone = false;
+    // Fade in the background video once it can play — independent of loader
+    if (bgVideo) {
+        bgVideo.play().catch(() => {});
+        bgVideo.addEventListener('canplay', () => {
+            bgVideo.style.opacity = '1';
+        }, { once: true });
+        // Fallback: show video after 4s even if canplay never fires
+        setTimeout(() => { bgVideo.style.opacity = '1'; }, 4000);
+    }
 
+    // Dismiss loader quickly — just wait for fonts + DOM, not video
     function dismiss() {
         label.textContent = 'READY';
         bar.style.width = '100%';
@@ -31,30 +39,20 @@ function initLoader() {
         }, 300);
     }
 
-    function check() {
-        const pct = (bgDone ? 50 : 0) + (textDone ? 50 : 0);
+    // Animate bar to 100% then dismiss
+    let pct = 0;
+    const interval = setInterval(() => {
+        pct = Math.min(pct + Math.random() * 18 + 8, 95);
         bar.style.width = pct + '%';
-        if (bgDone && textDone) dismiss();
-    }
+    }, 120);
 
-    // Track buffering progress on the larger video
-    if (bgVideo) {
-        bgVideo.play().catch(() => {});
-        bgVideo.addEventListener('canplay', () => { bgDone = true; check(); }, { once: true });
-        bgVideo.addEventListener('progress', () => {
-            if (!bgDone && bgVideo.buffered.length) {
-                const pct = (bgVideo.buffered.end(0) / bgVideo.duration) * 50;
-                bar.style.width = Math.min(pct, 48) + '%';
-            }
-        });
-    } else { bgDone = true; }
+    document.fonts.ready.then(() => {
+        clearInterval(interval);
+        dismiss();
+    });
 
-    if (textVideo) {
-        textVideo.addEventListener('canplay', () => { textDone = true; check(); }, { once: true });
-    } else { textDone = true; }
-
-    // Hard fallback — never block user for more than 6 seconds
-    setTimeout(() => { bgDone = true; textDone = true; check(); }, 6000);
+    // Hard fallback — never block user for more than 2.5 seconds
+    setTimeout(() => { clearInterval(interval); dismiss(); }, 2500);
 }
 
 // ===== NAVIGATION =====
