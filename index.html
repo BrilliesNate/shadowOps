@@ -3,279 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow Ops - Elite Private Security Solutions</title>
+    <title>Shadow Ops Private Security, Always In Your Shadow</title>
+    <link rel="preconnect" href="https://fonts.cdnfonts.com">
     <link rel="stylesheet" href="webStyle.css">
 </head>
 <body>
-    <!-- SVG Gradient Definitions -->
-    <svg width="0" height="0" style="position: absolute;">
-        <defs>
-            <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#8B9A7A;stop-opacity:1" />
-                <stop offset="50%" style="stop-color:#6B7B5A;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#4A5842;stop-opacity:1" />
-            </linearGradient>
-        </defs>
-    </svg>
 
-    <!-- Emergency Contact Bar -->
-    <div class="emergency-bar">
-        <div class="container">
-            <span>24/7 EMERGENCY RESPONSE</span>
-            <a href="tel:+27716403432" class="emergency-number">📞 071 640 3432</a>
+<!-- ===== LOADING SCREEN ===== -->
+<div class="site-loader" id="siteLoader">
+    <div class="loader-content">
+        <img src="assets/logo.png" class="loader-logo" alt="Shadow Ops">
+        <div class="loader-track">
+            <div class="loader-bar" id="loaderBar"></div>
+        </div>
+        <p class="loader-label" id="loaderLabel">INITIALIZING</p>
+    </div>
+</div>
+
+<!-- SVG Gradient Defs -->
+<svg width="0" height="0" style="position:absolute">
+    <defs>
+        <linearGradient id="iconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9ab890"/>
+            <stop offset="50%" style="stop-color:#6b8f5e"/>
+            <stop offset="100%" style="stop-color:#4a6741"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+<!-- ===== EMERGENCY BAR ===== -->
+<div class="emergency-bar">
+    <div class="em-inner">
+        <span class="em-label">⚡ 24/7 EMERGENCY RESPONSE</span>
+        <span class="em-divider">|</span>
+        <a href="tel:+27716403432" class="em-number">071 640 3432</a>
+    </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+    <div class="nav-inner">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Shadow Ops Logo">
+        </div>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#technology" class="nav-link">Technology</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">GET QUOTE</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+    <video class="hero-img" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <source src="assets/heroBackground.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-body">
+        <div class="hero-badge anim-in" style="--d:0.1s">PSIRA REGISTERED &bull; ISO CERTIFIED</div>
+        <h1 class="hero-heading">
+            <canvas class="title-canvas anim-in" id="titleCanvas" style="--d:0.25s" role="img" aria-label="SHADOW OPS"></canvas>
+            <video id="titleVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;top:-9999px">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <span class="hero-h2 anim-in" style="--d:0.4s">PRIVATE SECURITY</span>
+        </h1>
+        <p class="hero-tagline anim-in" style="--d:0.52s">Always In Your Shadow</p>
+        <p class="hero-desc anim-in" style="--d:0.62s">Elite security solutions backed by advanced technology, professional expertise, and unwavering commitment to your safety.</p>
+        <div class="hero-actions anim-in" style="--d:0.74s">
+            <a href="#contact" class="btn-primary">REQUEST FREE RISK ASSESSMENT</a>
+            <a href="#contact" class="btn-ghost">REQUEST CONSULTATION</a>
+        </div>
+        <div class="hero-nums anim-in" style="--d:0.88s">
+            <div class="hero-num">
+                <span class="hnum" data-target="20" data-suffix="+">0</span>
+                <span class="hlabel">Years Experience</span>
+            </div>
+            <div class="hero-num-divider"></div>
+            <div class="hero-num">
+                <span class="hnum" data-target="24" data-suffix="/7">0</span>
+                <span class="hlabel">Hour Response</span>
+            </div>
+            <div class="hero-num-divider"></div>
+            <div class="hero-num">
+                <span class="hnum" data-target="200" data-suffix="+">0</span>
+                <span class="hlabel">Security Personnel</span>
+            </div>
         </div>
     </div>
+    <div class="hero-scroll-hint">
+        <span>SCROLL</span>
+        <div class="scroll-bar"></div>
+    </div>
+</section>
 
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Shadow Ops Logo">
-                <div class="logo-text">
-                </div>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#technology" class="nav-link">Technology</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <a href="#contact" class="nav-cta">GET QUOTE</a>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<!-- ===== TRUST MARQUEE ===== -->
+<div class="marquee-wrap">
+    <div class="marquee-belt">
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>PSIRA Registered</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>ISO Certified</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>POPIA Compliant</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>24/7 Operations</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Elite Training</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Armed Response</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>PSIRA Registered</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>ISO Certified</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>POPIA Compliant</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>24/7 Operations</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Elite Training</div>
+        <div class="mq-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Armed Response</div>
+    </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services">
+    <div class="ghost-text" aria-hidden="true">GUARD</div>
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-label">WHAT WE OFFER</span>
+            <h2 class="sec-title">Comprehensive<br>Security Solutions</h2>
+            <p class="sec-sub">From elite guarding to advanced technical systems, complete security coverage tailored to your specific needs.</p>
         </div>
-    </nav>
+        <div class="svc-grid">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-badge">PSIRA REGISTERED • ISO CERTIFIED</div>
-            <h1 class="hero-title">
-                <span class="title-main">SHADOW OPS</span>
-                <span class="title-gradient">PRIVATE SECURITY</span>
-            </h1>
-            <p class="hero-tagline">Always In Your Shadow</p>
-            <p class="hero-description">Elite security solutions backed by advanced technology, professional expertise, and unwavering commitment to your safety.</p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn-primary">REQUEST FREE RISK ASSESSMENT</a>
-                <a href="#contact" class="btn-primary">REQUEST CONSULTATION</a>
-                <a href="#services" class="btn-secondary">OUR SERVICES</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="20">0</div>
-                    <div class="stat-label">Years Experience</div>
+            <div class="svc-card reveal stagger-1">
+                <div class="svc-img svc-img--guard">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="24">0</div>
-                    <div class="stat-label">Hour Response</div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
-
-    <!-- Trust Badges -->
-    <section class="trust-section">
-        <div class="container">
-            <div class="trust-badges">
-                <div class="trust-badge">
-                    <div class="badge-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <div class="badge-text">PSIRA Registered</div>
-                </div>
-                <div class="trust-badge">
-                    <div class="badge-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                        </svg>
-                    </div>
-                    <div class="badge-text">POPIA Compliant</div>
-                </div>
-                <div class="trust-badge">
-                    <div class="badge-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <div class="badge-text">24/7 Operations</div>
-                </div>
-                <div class="trust-badge">
-                    <div class="badge-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                        </svg>
-                    </div>
-                    <div class="badge-text">Elite Training</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">WHAT WE OFFER</span>
-                <h2 class="section-title">Comprehensive Security Solutions</h2>
-                <p class="section-subtitle">From guarding to advanced technical systems, we provide complete security coverage tailored to your specific needs.</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
+                <div class="svc-body">
+                    <span class="svc-num">01</span>
                     <h3>Professional Guarding</h3>
                     <p>Highly trained security personnel for residential, commercial, and industrial properties. Armed and unarmed options available.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>24/7 On-site presence</li>
                         <li>Access control management</li>
                         <li>Regular patrol schedules</li>
                         <li>Incident reporting</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-2">
+                <div class="svc-img svc-img--exec">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">02</span>
                     <h3>Executive Bodyguards</h3>
                     <p>Elite close protection officers trained in advanced threat assessment and personal security protocols.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>VIP protection</li>
                         <li>Threat assessment</li>
                         <li>Discrete security</li>
                         <li>Event security</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="1" y="3" width="15" height="13"/>
-                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
-                            <circle cx="5.5" cy="18.5" r="2.5"/>
-                            <circle cx="18.5" cy="18.5" r="2.5"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-3">
+                <div class="svc-img svc-img--escort">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">03</span>
                     <h3>Secure Escorts</h3>
                     <p>Professional escort services for high-value cargo, cash-in-transit, and VIP transportation.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>Armed convoy protection</li>
                         <li>Route planning</li>
                         <li>GPS tracking</li>
                         <li>Emergency response</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2"/>
-                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-4">
+                <div class="svc-img svc-img--tech">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">04</span>
                     <h3>Technical Services</h3>
                     <p>State-of-the-art security systems including CCTV, access control, alarms, and electric fencing.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>CCTV installation</li>
                         <li>Access control systems</li>
                         <li>Alarm systems</li>
                         <li>Electric fencing</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-1">
+                <div class="svc-img svc-img--vehicle">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">05</span>
                     <h3>Armoured Vehicles</h3>
                     <p>Premium armoured vehicle rentals and custom builds for maximum protection during transportation.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>B4-B7 protection levels</li>
                         <li>Custom builds</li>
                         <li>Rental options</li>
                         <li>Trained drivers</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="3" width="20" height="14" rx="2"/>
-                            <path d="M8 21h8"/>
-                            <path d="M12 17v4"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-2">
+                <div class="svc-img svc-img--monitor">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">06</span>
                     <h3>Off-Site Monitoring</h3>
                     <p>24/7 professional monitoring with real-time alerts and rapid response coordination.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>Live monitoring</li>
                         <li>Real-time alerts</li>
                         <li>Response coordination</li>
                         <li>Incident documentation</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <path d="m21 21-4.35-4.35"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-3">
+                <div class="svc-img svc-img--invest">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">07</span>
                     <h3>Investigations</h3>
                     <p>Professional investigative services including background checks, surveillance, and incident investigations.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>Background checks</li>
                         <li>Surveillance operations</li>
                         <li>Fraud investigation</li>
                         <li>Digital forensics</li>
                     </ul>
                 </div>
+            </div>
 
-                <div class="service-card premium">
-
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                            <polyline points="14 2 14 8 20 8"/>
-                            <line x1="16" y1="13" x2="8" y2="13"/>
-                            <line x1="16" y1="17" x2="8" y2="17"/>
-                        </svg>
-                    </div>
+            <div class="svc-card reveal stagger-4">
+                <div class="svc-img svc-img--risk">
+                    <div class="svc-img-overlay"></div>
+                    <div class="svc-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+                </div>
+                <div class="svc-body">
+                    <span class="svc-num">08</span>
                     <h3>Risk Assessments</h3>
                     <p>Comprehensive security audits and vulnerability assessments to identify and mitigate threats.</p>
-                    <ul class="service-features">
+                    <ul class="svc-list">
                         <li>Security audits</li>
                         <li>Vulnerability analysis</li>
                         <li>Threat assessment</li>
@@ -283,323 +276,294 @@
                     </ul>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Technology Section -->
-    <section id="technology" class="technology">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">CUTTING EDGE</span>
-                <h2 class="section-title">Advanced Technology Stack</h2>
-                <p class="section-subtitle">We leverage the latest security technology to provide unmatched protection and real-time intelligence.</p>
+<!-- ===== STATS ===== -->
+<section class="stats-sec">
+    <div class="stats-img"></div>
+    <div class="stats-overlay"></div>
+    <div class="container stats-inner">
+        <div class="stats-row">
+            <div class="stat-box reveal stagger-1">
+                <div class="stat-val" data-target="20" data-suffix="+">0</div>
+                <div class="stat-lbl">Years of Excellence</div>
             </div>
-
-            <div class="tech-grid">
-                <div class="tech-feature">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-                            <line x1="12" y1="18" x2="12.01" y2="18"/>
-                        </svg>
-                    </div>
-                    <h3>Mobile Command Center</h3>
-                    <p>Real-time monitoring and control via our advanced mobile applications</p>
-                </div>
-                <div class="tech-feature">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-                            <circle cx="12" cy="13" r="4"/>
-                        </svg>
-                    </div>
-                    <h3>AI-Powered CCTV</h3>
-                    <p>Smart surveillance with facial recognition and behavior analysis</p>
-                </div>
-                <div class="tech-feature">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="10" r="3"/>
-                            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
-                        </svg>
-                    </div>
-                    <h3>GPS Fleet Tracking</h3>
-                    <p>Live tracking of all response vehicles and security personnel</p>
-                </div>
-                <div class="tech-feature">
-                    <div class="tech-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                        </svg>
-                    </div>
-                    <h3>Instant Alerts</h3>
-                    <p>WhatsApp, SMS, and app notifications for immediate awareness</p>
-                </div>
+            <div class="stat-box reveal stagger-2">
+                <div class="stat-val" data-target="200" data-suffix="+">0</div>
+                <div class="stat-lbl">Security Personnel</div>
             </div>
-
-            <div class="tech-partners">
-                <h3>Technology Partners</h3>
-                <div class="partners-grid">
-                    <div class="partner-logo">HIKVISION</div>
-                    <div class="partner-logo">NEMTEK</div>
-                    <div class="partner-logo">REGAL</div>
-                </div>
+            <div class="stat-box reveal stagger-3">
+                <div class="stat-val" data-target="50" data-suffix="+">0</div>
+                <div class="stat-lbl">Response Vehicles</div>
+            </div>
+            <div class="stat-box reveal stagger-4">
+                <div class="stat-val">5 min</div>
+                <div class="stat-lbl">Average Response Time</div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-badge">WHO WE ARE</span>
-                    <h2 class="section-title">Excellence in Security</h2>
-                    <p class="about-text">Shadow Ops Private Security is a premier security solutions provider with over 20 years of excellence in the industry. We combine professional expertise, cutting-edge technology, and unwavering dedication to deliver security solutions that exceed expectations.</p>
-                    
-                    <p class="about-text">Our highly trained security personnel undergo rigorous vetting, comprehensive PSIRA-certified training, and continuous professional development. We maintain the highest standards of conduct, professionalism, and integrity in every operation.</p>
+<!-- ===== ABOUT ===== -->
+<section id="about" class="about">
+    <div class="ghost-text ghost-text--right" aria-hidden="true">OPS</div>
+    <div class="container">
+        <div class="about-layout">
 
-                    <div class="about-certifications">
-                        <div class="cert-item">
-                            <div class="cert-icon">✓</div>
-                            <div>
-                                <h4>PSIRA Registered</h4>
-                                <p>Fully compliant with all regulatory requirements</p>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <div class="cert-icon">✓</div>
-                            <div>
-                                <h4>POPIA Compliant</h4>
-                                <p>Your data handled with utmost confidentiality</p>
-                            </div>
-                        </div>
-                        <div class="cert-item">
-                            <div class="cert-icon">✓</div>
-                            <div>
-                                <h4>ISO Standards</h4>
-                                <p>International quality management certification</p>
-                            </div>
-                        </div>
+            <div class="about-img-col reveal-left">
+                <div class="about-img-frame">
+                    <img
+                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80"
+                        alt="Shadow Ops Security Operations"
+                        onerror="this.style.display='none'"
+                        loading="lazy"
+                    >
+                    <div class="about-img-badge">
+                        <strong class="about-badge-num" data-target="20" data-suffix="+">0+</strong>
+                        <span>Years of Trust</span>
                     </div>
+                </div>
+            </div>
 
-                    <div class="about-stats-small">
-                        <div class="stat-small">
-                            <strong>200+</strong>
-                            <span>Security Personnel</span>
-                        </div>
-                        <div class="stat-small">
-                            <strong>50+</strong>
-                            <span>Response Vehicles</span>
-                        </div>
-                        <div class="stat-small">
-                            <strong>5min</strong>
-                            <span>Avg Response Time</span>
-                        </div>
+            <div class="about-text-col reveal-right">
+                <span class="sec-label">WHO WE ARE</span>
+                <h2 class="sec-title">Excellence in<br>Security</h2>
+                <p class="about-p">Shadow Ops Private Security is a premier security solutions provider with over 20 years of excellence in the industry. We combine professional expertise, cutting-edge technology, and unwavering dedication to deliver security solutions that exceed expectations.</p>
+                <p class="about-p">Our highly trained security personnel undergo rigorous vetting, comprehensive PSIRA-certified training, and continuous professional development. We maintain the highest standards of conduct, professionalism, and integrity in every operation.</p>
+
+                <div class="cert-list">
+                    <div class="cert-row">
+                        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div><strong>PSIRA Registered</strong><p>Fully compliant with all regulatory requirements</p></div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div><strong>POPIA Compliant</strong><p>Your data handled with utmost confidentiality</p></div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div><strong>ISO Standards</strong><p>International quality management certification</p></div>
                     </div>
                 </div>
 
-                <div class="about-visual">
-                    <div class="visual-card">
-                        <div class="visual-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>To provide world-class security solutions that protect what matters most to our clients through innovation, professionalism, and unwavering commitment.</p>
+                <div class="values-grid">
+                    <div class="val-card">
+                        <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                        <h4>Mission</h4>
+                        <p>World-class protection through innovation and professionalism.</p>
                     </div>
-                    <div class="visual-card">
-                        <div class="visual-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                <circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>To be the most trusted and technologically advanced security provider in South Africa, setting new standards for excellence in the industry.</p>
+                    <div class="val-card">
+                        <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+                        <h4>Vision</h4>
+                        <p>The most trusted security provider in South Africa.</p>
                     </div>
-                    <div class="visual-card">
-                        <div class="visual-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <h3>Our Values</h3>
-                        <p>Integrity, professionalism, innovation, and absolute dedication to client safety drive everything we do.</p>
+                    <div class="val-card">
+                        <div class="val-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <h4>Values</h4>
+                        <p>Integrity, dedication, and absolute client commitment.</p>
                     </div>
                 </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===== TECHNOLOGY ===== -->
+<section id="technology" class="technology">
+    <div class="tech-bg"></div>
+    <div class="tech-ov"></div>
+    <div class="container tech-inner">
+        <div class="sec-header reveal">
+            <span class="sec-label">CUTTING EDGE</span>
+            <h2 class="sec-title">Advanced Technology Stack</h2>
+            <p class="sec-sub">We leverage the latest security technology to provide unmatched protection and real-time intelligence.</p>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-card reveal stagger-1">
+                <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+                <h3>Mobile Command Center</h3>
+                <p>Real-time monitoring and control via our advanced mobile applications</p>
+            </div>
+            <div class="tech-card reveal stagger-2">
+                <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+                <h3>AI-Powered CCTV</h3>
+                <p>Smart surveillance with facial recognition and behaviour analysis</p>
+            </div>
+            <div class="tech-card reveal stagger-3">
+                <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg></div>
+                <h3>GPS Fleet Tracking</h3>
+                <p>Live tracking of all response vehicles and security personnel</p>
+            </div>
+            <div class="tech-card reveal stagger-4">
+                <div class="tech-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+                <h3>Instant Alerts</h3>
+                <p>WhatsApp, SMS, and app notifications for immediate awareness</p>
             </div>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-badge">GET IN TOUCH</span>
-                <h2 class="section-title">Request a Consultation</h2>
-                <p class="section-subtitle">Let's discuss how we can secure what matters most to you</p>
+        <div class="partners-wrap reveal">
+            <p class="partners-label">TECHNOLOGY PARTNERS</p>
+            <div class="partners-row">
+                <div class="partner-pill">HIKVISION</div>
+                <div class="partner-pill">NEMTEK</div>
+                <div class="partner-pill">REGAL</div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="contact-grid">
-                <div class="contact-info-section">
-                    <h3>Contact Information</h3>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>24/7 Emergency Line</h4>
-                                <a href="tel:+27716403432">071 640 3432</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email Us</h4>
-                                <a href="mailto:info@shadowops.co.za">info@shadowops.co.za</a>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="10" r="3"/>
-                                    <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Location</h4>
-                                <p>South Africa</p>
-                            </div>
-                        </div>
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+    <div class="cta-bg"></div>
+    <div class="cta-ov"></div>
+    <div class="container cta-inner reveal">
+        <span class="sec-label">FREE ASSESSMENT</span>
+        <h2>Ready to Secure<br>What Matters Most?</h2>
+        <p>Contact our team for a free, no-obligation security risk assessment today.</p>
+        <a href="#contact" class="btn-primary btn-lg">GET FREE ASSESSMENT</a>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="sec-header reveal">
+            <span class="sec-label">GET IN TOUCH</span>
+            <h2 class="sec-title">Request a Consultation</h2>
+            <p class="sec-sub">Let's discuss how we can secure what matters most to you</p>
+        </div>
+        <div class="contact-layout">
+
+            <div class="contact-sidebar reveal-left">
+                <h3>Contact Information</h3>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                        <div><h4>24/7 Emergency Line</h4><a href="tel:+27716403432">071 640 3432</a></div>
                     </div>
-
-                    <div class="contact-cta-box">
-                        <h4>Emergency Response</h4>
-                        <p>For immediate assistance, call our 24/7 emergency line</p>
-                        <a href="tel:+27716403432" class="emergency-btn">CALL NOW</a>
+                    <div class="contact-item">
+                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                        <div><h4>Email Us</h4><a href="mailto:info@shadowops.co.za">info@shadowops.co.za</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/></svg></div>
+                        <div><h4>Location</h4><p>South Africa</p></div>
                     </div>
                 </div>
+                <div class="emergency-callout">
+                    <h4>Emergency Response</h4>
+                    <p>For immediate assistance, call our 24/7 emergency line</p>
+                    <a href="tel:+27716403432" class="btn-primary btn-em">CALL NOW, 071 640 3432</a>
+                </div>
+            </div>
 
-                <form class="contact-form-premium" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Company</label>
-                            <input type="text" id="company">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone *</label>
-                            <input type="tel" id="phone" required>
-                        </div>
-                    </div>
-
+            <form class="contact-form reveal-right" id="contactForm">
+                <div class="form-row">
                     <div class="form-group">
-                        <label>Service Required</label>
-                        <select id="service">
-                            <option value="">Select a service...</option>
-                            <option value="guarding">Professional Guarding</option>
-                            <option value="bodyguards">Executive Bodyguards</option>
-                            <option value="escorts">Secure Escorts</option>
-                            <option value="technical">Technical Services</option>
-                            <option value="vehicles">Armoured Vehicles</option>
-                            <option value="monitoring">Off-Site Monitoring</option>
-                            <option value="investigations">Investigations</option>
-                            <option value="risk">Risk Assessments</option>
-                        </select>
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" required placeholder="John Smith">
                     </div>
-
                     <div class="form-group">
-                        <label>Message *</label>
-                        <textarea id="message" rows="5" required></textarea>
+                        <label for="company">Company</label>
+                        <input type="text" id="company" placeholder="Your Company">
                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" required placeholder="john@company.co.za">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" required placeholder="071 000 0000">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Required</label>
+                    <select id="service">
+                        <option value="">Select a service...</option>
+                        <option value="guarding">Professional Guarding</option>
+                        <option value="bodyguards">Executive Bodyguards</option>
+                        <option value="escorts">Secure Escorts</option>
+                        <option value="technical">Technical Services</option>
+                        <option value="vehicles">Armoured Vehicles</option>
+                        <option value="monitoring">Off-Site Monitoring</option>
+                        <option value="investigations">Investigations</option>
+                        <option value="risk">Risk Assessments</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" rows="5" required placeholder="Tell us about your security needs..."></textarea>
+                </div>
+                <button type="submit" class="btn-primary btn-submit">
+                    SUBMIT REQUEST
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </form>
 
-                    <button type="submit" class="submit-btn-premium">
-                        <span>SUBMIT REQUEST</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"/>
-                            <polyline points="12 5 19 12 12 19"/>
-                        </svg>
-                    </button>
-                </form>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Shadow Ops" class="footer-logo">
+                <p class="footer-tagline">Always In Your Shadow</p>
+                <p class="footer-desc">Elite private security solutions for residential, corporate, and industrial clients across South Africa.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Professional Guarding</a></li>
+                    <li><a href="#services">Executive Protection</a></li>
+                    <li><a href="#services">Technical Services</a></li>
+                    <li><a href="#services">Investigations</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:+27716403432">071 640 3432</a></li>
+                    <li><a href="mailto:info@shadowops.co.za">info@shadowops.co.za</a></li>
+                    <li>South Africa</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/logo.png" alt="Shadow Ops Logo" class="footer-logo">
-                    <p class="footer-tagline">Always In Your Shadow</p>
-                    <p class="footer-description">Premier security solutions provider with 20+ years of excellence in protecting what matters most.</p>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#technology">Technology</a></li>
-                        <li><a href="#about">About Us</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#services">Professional Guarding</a></li>
-                        <li><a href="#services">Executive Protection</a></li>
-                        <li><a href="#services">Technical Services</a></li>
-                        <li><a href="#services">Investigations</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+27716403432">071 640 3432</a></li>
-                        <li><a href="mailto:info@shadowops.co.za">info@shadowops.co.za</a></li>
-                        <li>South Africa</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 Shadow Ops Private Security. All Rights Reserved.</p>
-                <div class="footer-badges">
-                    <span>PSIRA Registered</span>
-                    <span>•</span>
-                    <span>POPIA Compliant</span>
-                    <span>•</span>
-                    <span>ISO Certified</span>
-                </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shadow Ops Private Security. All Rights Reserved.</p>
+            <div class="footer-badges">
+                <span>PSIRA Registered</span>
+                <span>&bull;</span>
+                <span>POPIA Compliant</span>
+                <span>&bull;</span>
+                <span>ISO Certified</span>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="controller.js"></script>
+<!-- WhatsApp -->
+<a href="https://wa.me/27716403432" class="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="controller.js"></script>
+<script src="animations.js"></script>
 </body>
 </html>
