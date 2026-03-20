@@ -1,10 +1,3 @@
-// CRITICAL PATTERNS (from working POS — do not change):
-// 1. getSession() on mount to restore existing session
-// 2. onAuthStateChange listener keeps auth in sync
-// 3. Fetch userProfile AFTER user is confirmed
-// 4. loading state prevents route flicker
-// 5. signOut uses scope:'local' to avoid 403 on hosted deployments
-
 import { createContext, useContext, useEffect, useState } from 'react'
 import { supabase } from '../supabaseClient'
 
@@ -15,32 +8,50 @@ export function AuthProvider({ children }) {
   const [userProfile, setUserProfile] = useState(null)
   const [loading,     setLoading]     = useState(true)
 
-  // Fetch extended profile from the `profiles` table
   async function fetchProfile(userId) {
-    const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single()
-    if (error) {
-      console.error('fetchProfile error:', error.message)
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', userId)
+        .single()
+      if (error) {
+        console.warn('fetchProfile:', error.message)
+        return null
+      }
+      return data
+    } catch (err) {
+      console.warn('fetchProfile threw:', err)
       return null
     }
-    return data
   }
 
   useEffect(() => {
-    // 1. Check for an existing session on mount
-    supabase.auth.getSession().then(async ({ data: { session } }) => {
-      if (session?.user) {
-        setUser(session.user)
-        const profile = await fetchProfile(session.user.id)
-        setUserProfile(profile)
-      }
-      setLoading(false)
-    })
+    let settled = false
 
-    // 2. Subscribe to auth state changes (login, logout, token refresh)
+    function done() {
+      if (!settled) {
+        settled = true
+        setLoading(false)
+      }
+    }
+
+    // Hard fallback — loading can never stay stuck longer than 6 seconds
+    const fallback = setTimeout(done, 6000)
+
+    // 1. Restore existing session on mount
+    supabase.auth.getSession()
+      .then(async ({ data: { session } }) => {
+        if (session?.user) {
+          setUser(session.user)
+          const profile = await fetchProfile(session.user.id)
+          setUserProfile(profile)
+        }
+      })
+      .catch(err => console.warn('getSession error:', err))
+      .finally(done)   // always clear loading, even on error
+
+    // 2. Keep auth state in sync after login / logout / token refresh
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         if (session?.user) {
@@ -51,12 +62,17 @@ export function AuthProvider({ children }) {
           setUser(null)
           setUserProfile(null)
         }
-        // Only clear loading after initial check is done
-        if (event !== 'INITIAL_SESSION') setLoading(false)
+        // SIGNED_IN fires after a successful login — also clear loading here
+        if (['SIGNED_IN', 'SIGNED_OUT', 'TOKEN_REFRESHED'].includes(event)) {
+          done()
+        }
       }
     )
 
-    return () => subscription.unsubscribe()
+    return () => {
+      clearTimeout(fallback)
+      subscription.unsubscribe()
+    }
   }, [])
 
   async function signIn(email, password) {
@@ -69,7 +85,7 @@ export function AuthProvider({ children }) {
     try {
       await supabase.auth.signOut({ scope: 'local' })
     } catch (err) {
-      console.error('signOut error:', err)
+      console.warn('signOut error:', err)
     } finally {
       setUser(null)
       setUserProfile(null)
@@ -82,12 +98,16 @@ export function AuthProvider({ children }) {
     loading,
     signIn,
     signOut,
-    role: userProfile?.role ?? null,
+    role:      userProfile?.role ?? null,
     isAdmin:   userProfile?.role === 'admin',
-    isManager: ['admin','manager'].includes(userProfile?.role),
+    isManager: ['admin', 'manager'].includes(userProfile?.role),
   }
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export const useAuth = () => useContext(AuthContext)

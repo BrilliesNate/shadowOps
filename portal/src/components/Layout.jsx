@@ -26,7 +26,7 @@ export default function Layout({ children }) {
   const [collapsed, setCollapsed] = useState(
     () => localStorage.getItem('so-sidebar') === 'collapsed'
   )
-  const { userProfile, signOut } = useAuth()
+  const { user, userProfile, signOut } = useAuth()
   const { dark, toggle: toggleTheme } = useTheme()
   const { showToast } = useToast()
   const navigate = useNavigate()
@@ -43,9 +43,15 @@ export default function Layout({ children }) {
     navigate('/login')
   }
 
-  const initials = userProfile?.full_name
-    ? userProfile.full_name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase()
-    : '??'
+  // Resolve display name — fall back through: full_name → email → 'User'
+  const displayName = userProfile?.full_name || user?.email || 'User'
+  const initials = displayName
+    .split(/[\s@]+/)          // split on spaces or @ (handles email addresses)
+    .filter(Boolean)
+    .map(w => w[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
 
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-[#07090c] text-slate-900 dark:text-slate-100">
@@ -105,13 +111,13 @@ export default function Layout({ children }) {
         {/* Footer */}
         <div className="px-2 py-3 border-t border-slate-200 dark:border-white/[0.055] shrink-0">
           <div className="flex items-center gap-[10px] px-[7px] py-[8px]">
-            <div className="w-8 h-8 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs font-bold shrink-0">
+            <div className="w-8 h-8 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center text-xs font-bold shrink-0">
               {initials}
             </div>
             {!collapsed && (
               <div className="overflow-hidden">
-                <p className="text-[12.5px] font-semibold truncate">{userProfile?.full_name ?? 'User'}</p>
-                <p className="text-[11px] text-slate-400 capitalize">{userProfile?.role ?? '—'}</p>
+                <p className="text-[12.5px] font-semibold truncate">{displayName}</p>
+                <p className="text-[11px] text-slate-400 capitalize">{userProfile?.role ?? 'admin'}</p>
               </div>
             )}
           </div>
@@ -124,7 +130,7 @@ export default function Layout({ children }) {
 
         {/* Collapse toggle */}
         <button onClick={handleCollapse}
-          className="absolute -right-3 top-[72px] w-6 h-6 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-green-500 transition-colors shadow-sm z-10">
+          className="absolute -right-3 top-[72px] w-6 h-6 rounded-full bg-white dark:bg-[#1a2332] border border-slate-200 dark:border-white/10 flex items-center justify-center text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-colors shadow-sm z-10">
           {collapsed ? <ChevronRight size={12} /> : <ChevronLeft size={12} />}
         </button>
       </aside>
