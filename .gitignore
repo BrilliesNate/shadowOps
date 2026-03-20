@@ -3,3 +3,6 @@ assets/*_orig.mp4
 assets/*_720p.mp4
 assets/*_16mb.mp4
 node_modules/
+portal/node_modules/
+portal/dist/
+portal/package-lock.json
