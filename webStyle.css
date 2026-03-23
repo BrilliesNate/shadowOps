@@ -974,6 +974,21 @@ h1,h2,h3,h4 {
 .contact-item h4 { font-size: 0.8rem; color: var(--grey); font-weight: 500; margin-bottom: 0.25rem; }
 .contact-item a, .contact-item p { font-size: 0.95rem; color: var(--white); font-weight: 600; transition: color 0.2s; }
 .contact-item a:hover { color: var(--green-pale); }
+.social-links { margin-bottom: 2rem; }
+.social-links h4 { font-size: 0.8rem; color: var(--grey); font-weight: 500; margin-bottom: 0.9rem; }
+.social-icons { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.social-icons a {
+    display: flex; align-items: center; justify-content: center;
+    width: 2.2rem; height: 2.2rem;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid var(--border);
+    color: var(--grey);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.social-icons a:hover { background: var(--green); border-color: var(--green); color: #000; }
+.social-icons svg { width: 1rem; height: 1rem; }
+
 .emergency-callout {
     padding: 1.5rem;
     background: rgba(160,30,30,0.08);
