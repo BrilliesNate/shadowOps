@@ -401,7 +401,7 @@ h1,h2,h3,h4 {
     font-weight: 400;
     letter-spacing: 0.4em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--white);
     margin-bottom: 1.4rem;
 }
 .hero-desc {
@@ -588,14 +588,14 @@ h1,h2,h3,h4 {
     transition: background-size 0.6s ease;
     overflow: hidden;
 }
-.svc-img--guard   { background-color: #101810; background-image: url('https://images.unsplash.com/photo-1559163499-413811fb2344?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#101810,#070e07); }
-.svc-img--exec    { background-color: #0e1018; background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#0e1018,#07070d); }
-.svc-img--escort  { background-color: #0e1210; background-image: url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#0e1210,#070a08); }
-.svc-img--tech    { background-color: #0c1414; background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#0c1414,#060c0c); }
-.svc-img--vehicle { background-color: #100e0c; background-image: url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#100e0c,#0a0806); }
-.svc-img--monitor { background-color: #0c1018; background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#0c1018,#06070d); }
-.svc-img--invest  { background-color: #101014; background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#101014,#08080c); }
-.svc-img--risk    { background-color: #0e1212; background-image: url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80'), linear-gradient(135deg,#0e1212,#080a0a); }
+.svc-img--guard   { background-color: #101810; background-image: url('assets/ProfessionalGuarding.webp'), linear-gradient(135deg,#101810,#070e07); }
+.svc-img--exec    { background-color: #0e1018; background-image: url('assets/executiveBodyguards.webp'), linear-gradient(135deg,#0e1018,#07070d); }
+.svc-img--escort  { background-color: #0e1210; background-image: url('assets/secureEscorts.webp'), linear-gradient(135deg,#0e1210,#070a08); }
+.svc-img--tech    { background-color: #0c1414; background-image: url('assets/technicalService.webp'), linear-gradient(135deg,#0c1414,#060c0c); }
+.svc-img--vehicle { background-color: #100e0c; background-image: url('assets/armouredVehicle.webp'), linear-gradient(135deg,#100e0c,#0a0806); }
+.svc-img--monitor { background-color: #0c1018; background-image: url('assets/offSiteMonitoring.webp'), linear-gradient(135deg,#0c1018,#06070d); }
+.svc-img--invest  { background-color: #101014; background-image: url('assets/investigations.webp'), linear-gradient(135deg,#101014,#08080c); }
+.svc-img--risk    { background-color: #0e1212; background-image: url('assets/ProfessionalGuarding.webp'), linear-gradient(135deg,#0e1212,#080a0a); }
 
 .svc-img-overlay {
     position: absolute;
@@ -671,7 +671,7 @@ h1,h2,h3,h4 {
     position: absolute;
     inset: 0;
     background-color: #08090d;
-    background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('assets/whoWeAre.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -829,7 +829,7 @@ h1,h2,h3,h4 {
     position: absolute;
     inset: 0;
     background-color: #060a08;
-    background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('assets/offSiteMonitoring.webp');
     background-size: cover;
     background-position: center;
 }
@@ -916,7 +916,7 @@ h1,h2,h3,h4 {
     position: absolute;
     inset: 0;
     background-color: #0a1008;
-    background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80');
+    background-image: url('assets/ProfessionalGuarding.webp');
     background-size: cover;
     background-position: center 40%;
 }
