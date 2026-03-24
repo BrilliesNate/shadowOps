@@ -589,13 +589,13 @@ h1,h2,h3,h4 {
     overflow: hidden;
 }
 .svc-img--guard   { background-color: #101810; background-image: url('assets/ProfessionalGuarding.webp'), linear-gradient(135deg,#101810,#070e07); }
-.svc-img--exec    { background-color: #0e1018; background-image: url('assets/executiveBodyguards.webp'), linear-gradient(135deg,#0e1018,#07070d); }
+.svc-img--exec    { background-color: #0e1018; background-image: url('assets/executiveBodyguards.webp'), linear-gradient(135deg,#0e1018,#07070d); background-position: center 70%; }
 .svc-img--escort  { background-color: #0e1210; background-image: url('assets/secureEscorts.webp'), linear-gradient(135deg,#0e1210,#070a08); }
 .svc-img--tech    { background-color: #0c1414; background-image: url('assets/technicalService.webp'), linear-gradient(135deg,#0c1414,#060c0c); }
 .svc-img--vehicle { background-color: #100e0c; background-image: url('assets/armouredVehicle.webp'), linear-gradient(135deg,#100e0c,#0a0806); }
 .svc-img--monitor { background-color: #0c1018; background-image: url('assets/offSiteMonitoring.webp'), linear-gradient(135deg,#0c1018,#06070d); }
 .svc-img--invest  { background-color: #101014; background-image: url('assets/investigations.webp'), linear-gradient(135deg,#101014,#08080c); }
-.svc-img--risk    { background-color: #0e1212; background-image: url('assets/ProfessionalGuarding.webp'), linear-gradient(135deg,#0e1212,#080a0a); }
+.svc-img--risk    { background-color: #0e1212; background-image: url('assets/riskAssesment.webp'), linear-gradient(135deg,#0e1212,#080a0a); }
 
 .svc-img-overlay {
     position: absolute;
