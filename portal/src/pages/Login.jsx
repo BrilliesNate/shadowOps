@@ -4,6 +4,7 @@ import { Shield, Eye, EyeOff } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { useToast } from '../context/ToastContext'
 import { useTheme } from '../context/ThemeContext'
+import linkedLogoWhite from '../assets/linked-logo-white.webp'
 
 export default function Login() {
   const [email,    setEmail]    = useState('')
@@ -94,6 +95,25 @@ export default function Login() {
 
         <p className="text-center text-xs text-slate-600 mt-6">
           Shadow Ops Private Security · Portal v1.0
+        </p>
+
+        <p className="text-center mt-[0.8rem]">
+          <a
+            href="https://www.linked-impact.com"
+            target="_blank"
+            rel="noopener"
+            className="inline-flex items-center gap-2 text-[0.85rem] text-slate-600 no-underline transition-opacity duration-200 hover:opacity-75"
+          >
+            Built by
+            <img
+              src={linkedLogoWhite}
+              alt="Linked"
+              width="77"
+              height="18"
+              loading="lazy"
+              className="block w-auto h-[18px]"
+            />
+          </a>
         </p>
       </div>
     </div>
